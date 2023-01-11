@@ -1,5 +1,7 @@
+open System
+
 let CalculateVolume radius =
-  (4.0 / 3.0 ) * System.Math.PI * ( radius ** 3.0 )
+  (4.0 / 3.0 ) * Math.PI * ( radius ** 3.0 )
 
 let CategorizeSphere radius = 
   if radius < 10 then
@@ -9,9 +11,6 @@ let CategorizeSphere radius =
   else
     "large"
 
-let PrintSphereCategorization radius =
-  printfn "%s" (CategorizeSphere radius)
-
-let CategorizeSpheres _ =
-  List.map PrintSphereCategorization [1..20]
+List.map CategorizeSphere [1..20]
+|> List.iter (fun x -> printfn "%s" x)
   
